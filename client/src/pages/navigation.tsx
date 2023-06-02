@@ -20,7 +20,7 @@ export default function Navigation(){
     const mapNav = new SimpleMapNavigatorMockExample()
 
     const navDirections: NavigationDirections = mapNav.findShortestPath(
-        +data.startNodeId,
+        data.startNodeId as string,
         new MapNodeFilterById(data.endNodeId as string)
     )
     

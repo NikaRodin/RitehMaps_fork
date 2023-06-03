@@ -15,7 +15,7 @@ jobs:
     steps:
     - name: Print trigger event and user
       working-directory: ./
-      run: echo "Trigger event: ${{ github.event_name }}, User: ${{ github.actor }}"
+      run: echo "Trigger event - ${{ github.event_name }}, User - ${{ github.actor }}"
 
     - name: Checkout code
       uses: actions/checkout@v3

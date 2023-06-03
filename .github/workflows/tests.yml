@@ -13,13 +13,9 @@ jobs:
       run:
         working-directory: client
     steps:
-    - name: Print trigger event, user and date
+    - name: Print trigger event
       working-directory: ./
-      run: echo "Trigger event - ${{ github.event_name }}"
-      working-directory: ./
-      run: echo "User - ${{ github.actor }}"
-      working-directory: ./
-      run: echo "Date - `date`"
+      run: echo "Trigger event - ${{ github.event_name }}\nUser - ${{ github.actor }}\nDate - `date`"
 
     - name: Checkout code
       uses: actions/checkout@v3

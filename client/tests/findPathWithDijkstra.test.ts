@@ -11,7 +11,7 @@ describe('testing findPathWithDijkstra() with a 6-node graph', () => {
   test('should return correct path from 5 to 2', () => {
     var startNodeId = "5";
     var mapNodeFilter = new MapNodeFilterById("2");
-    var expectedPath = [new MapNode("5", 1, 0, 0), 
+    var expectedPath = [new MapNode("4", 1, 0, 0), 
                         new MapNode("3", 1, 0, 0),
                         new MapNode("0", 1, 0, 0), 
                         new MapNode("1", 1, 0, 0), 

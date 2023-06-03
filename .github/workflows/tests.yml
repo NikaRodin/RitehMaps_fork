@@ -16,7 +16,9 @@ jobs:
     - name: Print trigger event, user and date
       working-directory: ./
       run: echo "Trigger event - ${{ github.event_name }}"
+      working-directory: ./
       run: echo "User - ${{ github.actor }}"
+      working-directory: ./
       run: echo "Date - `date`"
 
     - name: Checkout code

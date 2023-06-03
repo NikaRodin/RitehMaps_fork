@@ -8,14 +8,14 @@ on:
 jobs:
   build_and_run:
     name: Build project and run unit tests
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: client
     steps:
-    - name: Print trigger event
+    - name: Print trigger event and user
       working-directory: ./
-      run: echo "Trigger event - ${{ github.event_name }}, User - ${{ github.actor }}, Date - `date`"
+      run: echo "Trigger event - ${{ github.event_name }}, User - ${{ github.actor }}"
 
     - name: Checkout code
       uses: actions/checkout@v3

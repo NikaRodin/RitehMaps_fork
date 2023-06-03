@@ -1,22 +1,27 @@
-name: Testing RitehMaps 
-on: push
+name: Building and testing RitehMaps 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
-  run_tests:
-    name: Run tests
+  build_and_run:
+    name: Build project & run tests
     runs-on: windows-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-    - name: Install Yarn dependencies
-      run: yarn install
-    - name: Build project assets
-      run: yarn run build
-    - name: Run tests
-      run: yarn test
     defaults:
       run:
         shell: bash
         working-directory: client/
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
 
+    - name: Install Yarn dependencies
+      run: yarn install
 
+    - name: Build project 
+      run: yarn run build
 
+    - name: Run tests
+      run: yarn test

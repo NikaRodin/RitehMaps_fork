@@ -1,4 +1,4 @@
-name: Building and testing RitehMaps 
+name: Build and test check
 on:
   push:
     branches: [ main ]
@@ -7,15 +7,17 @@ on:
 
 jobs:
   build_and_run:
-    name: Build project & run tests
+    name: Build project and run unit tests
     runs-on: windows-latest
     defaults:
       run:
         working-directory: client
     steps:
-    - name: Print GitHub event trigger
+    - name: Print trigger event, user and date
       working-directory: ./
-      run: echo "${{ github.event_name }}" 
+      run: echo "Trigger event - ${{ github.event_name }}"
+      run: echo "User - ${{ github.actor }}"
+      run: echo "Date - `date`"
 
     - name: Checkout code
       uses: actions/checkout@v3

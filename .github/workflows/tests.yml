@@ -15,7 +15,7 @@ jobs:
         working-directory: client/
     steps:
     - name: Print GitHub event action
-    - run: echo "${{ github.event.action }}"
+      run: echo "${{ github.event.action }}" 
 
     - name: Checkout code
       uses: actions/checkout@v3

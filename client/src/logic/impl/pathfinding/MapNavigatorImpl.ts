@@ -13,13 +13,13 @@ export class MapNavigatorImpl implements MapNavigator {
         this.graph = graph;
     }
 
-    findShortestPath(startNodeId: number, endNodeFilter: MapNodeFilter): NavigationDirections {
+    findShortestPath(startNodeId: string, endNodeFilter: MapNodeFilter): NavigationDirections {
         let path = this.findPathToNearestNode(startNodeId, endNodeFilter);
         let navNodes = this.convertPathToNavigationNodes(path);
         return this.splitNavigationPathIntoSteps(navNodes);
     }
 
-    private findPathToNearestNode(startNodeId: number, endNodeFilter: MapNodeFilter): MapNode[] {
+    private findPathToNearestNode(startNodeId: string, endNodeFilter: MapNodeFilter): MapNode[] {
        return findPathWithDijkstra(startNodeId, endNodeFilter, this.graph);
     }
 
